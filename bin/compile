@@ -36,6 +36,7 @@ case "${STACK}" in
   "heroku-18" | "heroku-20" | "heroku-22")
     PACKAGES="
       tesseract-ocr
+      libarchive13
       poppler-utils
     "
     ;;
