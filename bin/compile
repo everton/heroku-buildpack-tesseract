@@ -38,6 +38,7 @@ case "${STACK}" in
       tesseract-ocr
       libarchive13
       poppler-utils
+      imagemagick
     "
     ;;
   *)
