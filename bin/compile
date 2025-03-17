@@ -33,7 +33,7 @@ function indent() {
 
 # Install correct dependencies according to $STACK
 case "${STACK}" in
-  "heroku-18" | "heroku-20" | "heroku-22")
+  "heroku-18" | "heroku-20" | "heroku-22" | "heroku-24")
     PACKAGES="
       tesseract-ocr
       libarchive13
