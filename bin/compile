@@ -33,11 +33,10 @@ function indent() {
 
 # Install correct dependencies according to $STACK
 case "${STACK}" in
-  "heroku-18" | "heroku-20" | "heroku-22" | "heroku-24")
+  "heroku-24")
     PACKAGES="
       tesseract-ocr
-      libarchive13
-      poppler-utils
+      tesseract-ocr-por
       imagemagick
     "
     ;;
@@ -87,7 +86,7 @@ topic "Writing profile script"
 mkdir -p $BUILD_DIR/.profile.d
 cat <<EOF >$BUILD_DIR/.profile.d/000_apt.sh
 export PATH="\$HOME/.apt/usr/bin:\$PATH"
-export TESSDATA_PREFIX="\$HOME/.apt/usr/share/tesseract-ocr/4.00/tessdata"
+export TESSDATA_PREFIX="\$HOME/.apt/usr/share/tesseract-ocr/5/tessdata"
 export LD_LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LD_LIBRARY_PATH"
 export LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LIBRARY_PATH"
 export INCLUDE_PATH="\$HOME/.apt/usr/include:\$HOME/.apt/usr/include/x86_64-linux-gnu:\$INCLUDE_PATH"
@@ -97,7 +96,7 @@ export PKG_CONFIG_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:\$HOME/.a
 EOF
 
 export PATH="$BUILD_DIR/.apt/usr/bin:$PATH"
-export TESSDATA_PREFIX="$BUILD_DIR.apt/usr/share/tesseract-ocr/4.00/tessdata"
+export TESSDATA_PREFIX="$BUILD_DIR.apt/usr/share/tesseract-ocr/5/tessdata"
 export LD_LIBRARY_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu:$BUILD_DIR/.apt/usr/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu:$BUILD_DIR/.apt/usr/lib:$LIBRARY_PATH"
 export INCLUDE_PATH="$BUILD_DIR/.apt/usr/include:$BUILD_DIR/.apt/usr/include/x86_64-linux-gnu:$INCLUDE_PATH"
